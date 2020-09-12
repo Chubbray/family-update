@@ -29,6 +29,10 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   User.create(
+      {
+          username: "johndoe",
+          email: "johndoe@gmail.com",
+      },
     req.body
   )
     .then(dbUserData => res.status(200).json(dbUserData))
