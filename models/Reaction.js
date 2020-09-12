@@ -20,8 +20,14 @@ const ReactionSchema = new Schema({
         default: Date.now,
         required: moment().format(),
     },
-});
+},
+    {
+        toJSON: {
+            getters: true,
+        },
+        id: false,
+    }
+);
 
-const Reaction = model("Reaction", ReactionSchema);
 
-module.exports = Reaction;
+module.exports = ReactionSchema;
