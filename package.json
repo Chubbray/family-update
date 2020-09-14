@@ -1,0 +1,27 @@
+{
+  "name": "family-update",
+  "version": "1.0.0",
+  "description": "*Family-Update",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "mongoose": "^5.10.5",
+    "json": "^10.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chubbray/family-update.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chubbray/family-update/issues"
+  },
+  "homepage": "https://github.com/Chubbray/family-update#readme"
+}

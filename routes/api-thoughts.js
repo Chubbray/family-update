@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const { User, Thought, Reaction } = require("../models");
-const Thought = require("../models/Thought");
+
 
 router.get("/", (req, res) => {
   Thought.findAll({
     include: [User,
     {
       model: Reaction,
-      through: Thought,
+      through: User,
     }]
   })
     .then(dbThoughtData => res.json(dbThoughtData))
@@ -26,7 +26,7 @@ router.get("/:id", (req, res) => {
     include: [User,
       {
         model: Reaction,
-        through: Thought,
+        through: User,
       }]
   })
     .then(dbThoughtData => res.json(dbThoughtData))

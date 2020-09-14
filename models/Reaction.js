@@ -3,8 +3,8 @@ const moment = require("moment");
 
 const ReactionSchema = new Schema({
     reactionId: {
-        type: mongoose.Schema.Types.ObjectId,
-        default: new mongoose.Types.ObjectId(),
+        type: Schema.Types.ObjectId,
+        default: () => new Types.ObjectId(),
     },
     reactionBody: {
         type: String,
@@ -18,8 +18,7 @@ const ReactionSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        getDate: moment().format(),
-        required: true,
+        get: (createdAtVal) => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a'),
     },
 },
     {
